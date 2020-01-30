@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello React</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class TextAnim extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          data: this.props.amount.split('') || [],
+          show: false,
+        };
+      }
+
+      componentDidMount() {
+        setTimeout(() => {
+          this.setState({ show: true });
+        }, 100);
+      }
+
+      bonusNumStyle = num => ({
+        display: 'inline-block',
+        backgroundImage: 'url(\'./img/bonus.png\')',
+        backgroundRepeat: 'repeat-y',
+        // 控制数字滚动速度
+        backgroundPosition: `center ${(10 - (+num)) * 5 + 50}rem`,
+      })
+
+      render() {
+        const { data, show } = this.state;
+        return (
+          <div className="bonusPanel">
+            {
+              data.map((val, index) => (
+                <div
+                  key={index}
+                >
+                  <span className="item" style={show ? this.bonusNumStyle(val) : {}} />
+                </div>
+              ))
+            }
+            <div>
+              <span className="unit">元</span>
+            </div>
+          </div>
+
+        );
+      }
+    }
+
+    class Redpack extends React.Component {
+      constructor(props) {
+      super(props);
+      this.state = {
+        animation: false,
+        status: 0,
+        name: '赵日天',
+        bonus: 188,
+        description: '2020年，一个特殊的年份；2020，两组数字完全一样的年份，百年一遇；2020，谐音是“爱你爱你”的年份。恭喜您获得2020年开门抽奖福利包，价值288元！您抽奖所得的红包将存入您的用餐卡！',
+      };
+    }
+
+    stopAnimation = () => {
+      this.setState({ animation: false });
+    }
+
+    showResult = () => {
+      this.setState({ status: 1 });
+    }
+
+    openRedPacket = () => {
+      this.setState({ animation: true});
+      setTimeout(this.stopAnimation.bind(this), 1000);
+      setTimeout(this.showResult.bind(this), 1000);
+    }
+
+    render() {
+      const {
+        bonus, status, animation, description, name,
+      } = this.state;
+
+      // 开启界面
+      if (status === 0) {
+        return (
+          <div className="redpackContainer">
+            <div className="redpack">
+              <div className="topcontent">
+                <div className="redpackOpened">
+                  <div className="redpackAvatar">
+                    <img src="./img/fa.png" alt="avatar" />
+                  </div>
+                </div>
+                <h2 className="getRedpackPeopleName">{name}</h2>
+              </div>
+              <img src="./img/open.png" alt="open" className={`${animation ? "rotate" : ''} redpackOpen`} onClick={this.openRedPacket.bind(this)} role="button" />
+            </div>
+          </div>
+        );
+      }
+
+      // 显示奖励金额
+      return (
+        <div className="redpackContainer">
+          <div className="redpack">
+            <div className="redopcontentOpen">
+              <div className="redpackOpenedAvatar">
+                <div className="redpackAvatarMask">
+                  <img src="./img/fa.png" alt="avatar" />
+                </div>
+              </div>
+              <TextAnim amount={`${bonus}`} />
+              <div className="redpackText">
+                <span>{`${description}`}</span>
+              </div>
+              <div className="redpackTip">
+                <span>-结合考情记录发放-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    }
+    ReactDOM.render(
+    <Redpack />,
+    document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>

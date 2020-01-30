@@ -1,0 +1,222 @@
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+
+#root {
+  background-image: linear-gradient(to bottom , #D94564, #D84564, #4C00A2);
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redpackContainer {
+  text-align: center;
+}
+
+.redpack {
+  height: 400px;
+  background-image: linear-gradient(to bottom , #B22244, #D2395C, #E03853);
+  width: 240px;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  position: relative;
+}
+
+.redopcontentOpen {
+  height: 72px;
+  border: 1px solid linear-gradient(to bottom , #FF6283, #D9526D, #D53F59);
+  background-image: linear-gradient(to bottom , #FA4A68, #D53F59);
+  border-radius: 10px 10px 50% 50% / 10px 10px 22% 22%;
+  box-shadow: 0px 1px 0px -1px rgba(0,0,0,0.1);
+  transition: 1s ease-in-out;
+}
+
+.topcontent {
+  height: 300px;
+  border: 1px solid #FF4266;
+  background-image: linear-gradient(to bottom , #FA4A68, #D53F59);
+  border-radius: 10px 10px 50% 50% / 10px 10px 15% 15%;
+  box-shadow: 0px 5px 0px -1px rgba(0,0,0,0.2);
+}
+
+.redpackOpened {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: -50px;
+}
+
+.redpackAvatar {
+  position: relative;
+}
+
+.redpackAvatar > span {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+.redpackAvatar > img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 85px;
+  z-index: 10;
+}
+
+.redpackOpenedAvatar {
+  display: flex;
+  justify-content: center;
+}
+
+.redpackAvatarMask {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  margin-top: 31px;
+  background-image: linear-gradient(to top , #FA4A68, #D53F59);
+  border-radius: 50%;
+  border: none;
+}
+
+.redpackAvatarMask > img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.getRedpackPeopleName {
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:25px;
+  font-size: 20px;
+}
+
+.rotate{
+  -webkit-animation: anim 1s infinite alternate;
+  -ms-animation: anim 1s infinite alternate;
+  animation: anim 1s infinite alternate;
+}
+@-webkit-keyframes anim {
+  from { -webkit-transform: rotateY(180deg); }
+  to { -webkit-transform: rotateY(360deg); }
+}
+@-ms-keyframes anim {
+  from { -ms-transform: rotateY(180deg); }
+  to { -ms-transform: rotateY(360deg); }
+}
+@keyframes anim {
+  from { transform: rotateY(180deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.redpackText {
+  line-height:20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: justify;
+  text-indent: 18px;
+  margin-top: 30px;
+}
+
+.redpackText > span {
+  font-weight:400;
+  color:rgba(255,217,172,0.85);
+  font-size:14px;
+}
+
+.redpackTip {
+  line-height:20px;
+  text-align: center;
+  margin-top: 16px;
+  position: absolute;
+  bottom: 10px;
+  left: 65px;
+}
+
+.redpackTip > span {
+  font-weight:400;
+  color:rgba(255,217,172,0.85);
+  font-size:11px;
+}
+
+.redpackOpen {
+  width: 72px;
+  height: 72px;
+  border: 1px solid #FFA73A;
+  background-color: #FFA73A;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: -50px;
+  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.redpackOpen > span{
+  margin-top: 35px;
+  display: inline-block;
+}
+
+.redpackOpened {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: -50px;
+}
+
+/* bonus number */ 
+.bonusPanel {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.item {
+  display: inline-block;
+  background-image: url("./img/bonus.png");
+  background-repeat: repeat-y;
+  background-position: center 0;
+  background-size: 2.5rem 50rem;
+  width: 2.5rem;
+  height: 5rem;
+  transition: background-position 5s ease;
+}
+
+.unit {
+  display: table-cell;
+  width: 2.5rem;
+  height: 5rem;
+  vertical-align: bottom;
+  text-align: left;
+  padding-bottom: 2rem;
+  color:rgba(255,217,172,1);
+}
