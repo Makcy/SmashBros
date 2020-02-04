@@ -191,11 +191,11 @@ html{font-size:10px}
 /* bonus number */ 
 .bonusPanel {
   width: 100%;
-  height: 5rem;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 1.25rem;
+  padding-left: 13px;
   margin-top: 15px;
   margin-bottom: 20px;
 }
@@ -205,18 +205,18 @@ html{font-size:10px}
   background-image: url("./img/bonus.png");
   background-repeat: repeat-y;
   background-position: center 0;
-  background-size: 2.5rem 50rem;
-  width: 2.5rem;
-  height: 5rem;
+  background-size: 27.5px 550px;
+  width: 27.5px;
+  height: 55px;
   transition: background-position 5s ease;
 }
 
 .unit {
   display: table-cell;
-  width: 2.5rem;
-  height: 5rem;
+  width: 27.5px;
+  height: 55px;
   vertical-align: bottom;
   text-align: left;
-  padding-bottom: 2rem;
+  padding-bottom: 22px;
   color:rgba(255,217,172,1);
 }
